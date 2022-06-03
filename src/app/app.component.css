@@ -1,0 +1,48 @@
+.main-nav{
+  border-bottom: 2px solid black;
+  padding: 15px 0;
+}
+
+.nav-list{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.logo a{
+  text-decoration: none;
+  color: black;
+}
+
+.main-block{
+  display: flex;
+  width: 100%;
+}
+
+.info-block{
+  border: 2px solid gray;
+  width: 65%;
+  height: 87vh;
+  display: flex;
+}
+
+.display-block{
+  border: 2px solid red;
+  width: 55%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.search-block{
+  border: 2px solid green;
+  width: 35%;
+}
+
+.card-block{
+  align-self: auto;
+  border: 2px solid blue;
+  width: 45%;
+  height: auto;
+  margin: 0 auto;
+}
