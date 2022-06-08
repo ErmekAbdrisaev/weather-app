@@ -1,0 +1,20 @@
+<app-loader [isLoading]="forecastLoading | async">
+  <div class="info-block">
+    <div class="display-block" *ngIf="forecast | async as $forecast">
+      <h3>{{$forecast.location.name}}</h3>
+      <h4>{{$forecast.location.country}}</h4>
+      <h2>{{$forecast.location.localtime}}</h2>
+      <p>{{temperatureChange === 'cel' ? $forecast.current.temp_c : $forecast.current.temp_f }}</p>
+      <div class="tempOption">
+        <label for="tempChange" class="tempLabel">
+          <select name="tempChange" id="tempChange" [(ngModel)]="temperatureChange">
+            <option value="far">F</option>
+            <option value="cel">C</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+</app-loader>
+
+

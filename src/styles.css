@@ -9,9 +9,11 @@
 
 body{
   color: black;
+  background: linear-gradient(#EDB17F, #D7716F);
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  height: 100vH;
 }
 
 .container{
