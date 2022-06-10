@@ -1,10 +1,22 @@
 .info-block{
   display: flex;
+  width: 300px;
+  max-width: 550px;
+  margin: 1em auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgb(100,100,100) radial-gradient(circle at 0 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+  box-shadow:
+    inset rgba(0,0,0,.5) -3px -3px 8px,
+    inset rgba(255,255,255,.9) 3px 3px 8px,
+    rgba(0,0,0,.8) 3px 3px 8px -3px;
 }
 
 .display-block{
-
   text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  color: lightgoldenrodyellow;
 }
 
 .loader{
@@ -14,3 +26,49 @@
   border-radius: 50%;
   border-top: none;
 }
+
+.forecastTemp{
+  font-size: 50px;
+  font-weight: 700;
+  box-shadow: #4D4D4D;
+}
+
+.feelsLike span{
+  font-size: 35px;
+}
+
+.conditionBlock{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.conditionBlock img{
+  display:block;
+  max-width:400px;
+  align-self: center;
+}
+
+.windBlock img{
+  width: 24px
+}
+
+.alternativeText img{
+  width: 100%;
+  background: unset;
+  border-radius: 4px;
+}
+
+.alternativeText h1{
+  color: #4D4D4D;
+}
+ h1{
+   text-align: center;
+   color: lightgoldenrodyellow;
+ }
+
+ h5{
+   text-align: center;
+   color: #4D4D4D;
+   font-size: 16px;
+ }

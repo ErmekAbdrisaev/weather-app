@@ -13,12 +13,14 @@ export class ForecastResultComponent {
   forecast: Observable<null | Forecast>;
   forecastLoading: Observable<boolean>;
   temperatureChange = 'cel';
+  forecastError: Observable<null | string>
 
   constructor(
     private store: Store<AppState>
   ) {
     this.forecast = this.store.select(state => state.forecast.forecast);
     this.forecastLoading =  this.store.select(state => state.forecast.forecastLoading);
+    this.forecastError = store.select(state => state.forecast.forecastError);
   }
 
 }

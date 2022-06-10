@@ -9,15 +9,27 @@
 
 body{
   color: black;
-  background: linear-gradient(#EDB17F, #D7716F);
+  /*background: linear-gradient(#e8a578, #e59773, #d97374, #d05a74, #d45673);*/
+  /*background: linear-gradient(#c0d184, #aac173, #87a45e, #6e8b4b);*/
+  /*background: linear-gradient(#6e9bcb, #668fbd, #556c9e, #49598c);*/
+  background: linear-gradient(#f7f8fd, #ececf5, #e1dfea, #cecbd6);
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  height: 100vH;
+  min-height: 100vH;
 }
 
 .container{
   max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.error{
+  background-color: #f44336;
+  padding: 20px;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 2px;
 }

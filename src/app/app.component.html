@@ -2,15 +2,18 @@
   <div class="container">
     <nav class="nav">
       <ul class="nav-list">
-        <li class="logo"><a href="/">Weather</a></li>
-        <li class="theme"><p>Theme</p></li>
+        <li class="logo"><a href="/">Be ready for any weather</a></li>
+        <li class="theme" (click)="$event"></li>
       </ul>
     </nav>
   </div>
 </div>
 
 <div class="container main-block">
-  <app-forecast-search></app-forecast-search>
-
-  <app-forecast-result></app-forecast-result>
+  <div class="firstBlock">
+    <app-forecast-search></app-forecast-search>
+  </div>
+  <div class="result-block">
+    <app-forecast-result></app-forecast-result>
+  </div>
 </div>

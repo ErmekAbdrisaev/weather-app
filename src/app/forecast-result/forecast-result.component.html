@@ -1,10 +1,38 @@
+<div class="error" *ngIf="forecastError | async">
+  {{ forecastError | async }}
+</div>
+
 <app-loader [isLoading]="forecastLoading | async">
-  <div class="info-block">
-    <div class="display-block" *ngIf="forecast | async as $forecast">
-      <h3>{{$forecast.location.name}}</h3>
+  <div class="info-block" *ngIf="forecast | async as $forecast">
+    <div class="display-block" >
+      <h1>{{$forecast.location.name}}</h1>
       <h4>{{$forecast.location.country}}</h4>
-      <h2>{{$forecast.location.localtime}}</h2>
-      <p>{{temperatureChange === 'cel' ? $forecast.current.temp_c : $forecast.current.temp_f }}</p>
+      <div>
+        <p class="forecastTemp"> {{temperatureChange === 'cel' ? $forecast.current.temp_c + '℃' : $forecast.current.temp_f + '℉'}} / </p>
+        <p class="feelsLike">Feels like:
+          <span>{{temperatureChange === 'cel' ? $forecast.current.feelslike_c + '℃': $forecast.current.feelslike_f + '℉' }} </span>
+        </p>
+      </div>
+      <div class="conditionBlock">
+        <p>{{$forecast.current.condition.text}}
+          <img [src]="$forecast.current.condition.icon" alt="condition image">
+        </p>
+      </div>
+      <div class="windBlock">
+        <span> Wind direction: {{ $forecast.current.wind_dir }} </span>
+        <p>
+          <span>
+            <img src="./assets/Windy.svg" alt="wind picture">
+            {{temperatureChange === 'cel' ? $forecast.current.wind_kph + 'kph' : $forecast.current.wind_mph + 'mph' }}
+            |</span>
+          <span><img src="./assets/humidity.svg" alt=""> {{ $forecast.current.humidity }}</span>
+
+        </p>
+      </div>
+      <div>
+        <p>UV index: {{ $forecast.current.uv}}</p>
+        <p>Visibility: {{ $forecast.current.vis_km + 'kmh'}} km</p>
+      </div>
       <div class="tempOption">
         <label for="tempChange" class="tempLabel">
           <select name="tempChange" id="tempChange" [(ngModel)]="temperatureChange">
@@ -15,6 +43,14 @@
       </div>
     </div>
   </div>
+<!--  <div #alterText  class="alternativeText">-->
+<!--    <h1>Worldwide forecast</h1>-->
+<!--    <img src="./assets/worldweather.png" alt="world map">-->
+<!--    <h5>Learn about the weather in the world</h5>-->
+<!--  </div>-->
 </app-loader>
+
+
+
 
 
