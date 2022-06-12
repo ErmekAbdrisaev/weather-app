@@ -19,5 +19,4 @@ export class ForecastSearchComponent {
     const city = this.searchForm.value['searchCountry'];
     this.store.dispatch(fetchForecastRequest({city}));
   }
-
 }

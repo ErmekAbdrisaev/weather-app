@@ -7,5 +7,5 @@ export type ForecastState = {
 }
 
 export type AppState = {
-  forecast: ForecastState
+  forecast: ForecastState,
 }

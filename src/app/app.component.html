@@ -1,19 +1,17 @@
-<div class="main-nav">
-  <div class="container">
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="logo"><a href="/">Be ready for any weather</a></li>
-        <li class="theme" (click)="toggleTheme()"></li>
-      </ul>
-    </nav>
-  </div>
+<div class="container main-nav">
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="logo"><a href="/">Be ready for any weather</a></li>
+      <li class="theme" (click)="toggleTheme()"></li>
+    </ul>
+  </nav>
 </div>
 
 <div class="container main-block">
-  <div class="firstBlock">
+  <div>
     <app-forecast-search></app-forecast-search>
   </div>
-  <div class="result-block">
+  <div>
     <app-forecast-result></app-forecast-result>
   </div>
 </div>

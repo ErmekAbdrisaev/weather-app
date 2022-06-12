@@ -11,8 +11,7 @@ export class ForecastEffect {
   constructor(
     private actions: Actions,
     private forecastService: ForecastService,
-  ) {
-  }
+  ) {}
 
   fetchForecast = createEffect(() => this.actions.pipe(
     ofType(fetchForecastRequest),

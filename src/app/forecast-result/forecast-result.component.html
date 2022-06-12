@@ -13,42 +13,50 @@
 
     <div class="forecast__more">
       <div class="forecast__more__item">
-        <img src="../../assets/images/tempIncrease.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/tempIncrease.png"
+             alt="feels image" class="forecast__more__item__img">
         {{temperatureChange === 'cel' ? $forecast.current.feelslike_c + '℃' : $forecast.current.feelslike_f + '℉' }}
       </div>
 
       <div class="forecast__more__item forecast__more__item--condition">
-        <img [src]="$forecast.current.condition.icon" alt="condition image" class="forecast__more__item__img">
+        <img src="../../assets/images/condition.png"
+             alt="condition image" class="forecast__more__item__img">
         {{$forecast.current.condition.text}}
       </div>
 
       <div class="forecast__more__item forecast__more__item--wind-direction">
-        <img src="../../assets/images/wind-direction.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/wind-direction.png"
+             alt="feels image" class="forecast__more__item__img">
         {{ $forecast.current.wind_dir }}
       </div>
 
       <div class="forecast__more__item forecast__more__item--wind-force">
-        <img src="../../assets/images/wind.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/wind.png"
+             alt="feels image" class="forecast__more__item__img">
         {{temperatureChange === 'cel' ? $forecast.current.wind_kph + 'kph' : $forecast.current.wind_mph + 'mph' }}
       </div>
 
       <div class="forecast__more__item forecast__more__item--humidity">
-        <img src="../../assets/images/humidity.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/humidity.png"
+             alt="feels image" class="forecast__more__item__img">
         {{ $forecast.current.humidity }}
       </div>
 
       <div class="forecast__more__item forecast__more__item--uv">
-        <img src="../../assets/images/uv.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/uv.png"
+             alt="feels image" class="forecast__more__item__img">
         {{ $forecast.current.uv}}
       </div>
 
       <div class="forecast__more__item forecast__more__item--visibility">
-        <img src="../../assets/images/visibility.png" alt="feels image" class="forecast__more__item__img">
+        <img src="../../assets/images/visibility.png"
+             alt="feels image" class="forecast__more__item__img">
         {{ temperatureChange === 'cel' ? $forecast.current.vis_km + 'kmh' : $forecast.current.vis_miles + 'mph' }}
       </div>
 
       <div class="forecast__more__item forecast__more__item--pressure">
-        <img src="../../assets/images/pressure.png" alt="weather pressure" class="forecast__more__item__img">
+        <img src="../../assets/images/pressure.png"
+             alt="weather pressure" class="forecast__more__item__img">
         {{ temperatureChange === 'cel' ? $forecast.current.pressure_in + 'Hg' : $forecast.current.pressure_mb + 'Mb' }}
       </div>
       <div class="forecast__more__item forecast__more__item--tempOption">

@@ -1,6 +1,4 @@
-<div class="card-block">
-  <form (ngSubmit)="onSubmit()" #f="ngForm">
-    <input type="text" name="searchCountry" id="searchCountry" ngModel placeholder="Search for place"/>
-    <button type="submit" class="btnSearch">Search</button>
-  </form>
-</div>
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="card-block">
+  <input type="text" name="searchCountry" class="card-block__input" ngModel placeholder="Search for place">
+  <button type="submit" class="card-block__button">Search</button>
+</form>

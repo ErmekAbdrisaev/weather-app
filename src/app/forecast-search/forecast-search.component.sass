@@ -1,33 +1,30 @@
-form
+.card-block
   display: flex
   justify-content: center
   align-items: center
-
-.card-block
   margin: 0 auto
 
-.card-block input
-  border: 0
-  border-radius: 8px
-  width: 100%
-  max-width: 220px
-  margin: 10px auto
-  padding: 1em
-  color: var(--card-block-input-placeholder)
-  box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset
-  background-color: inherit
-
-  &:focus-visible
-    outline: none
-
-  &::placeholder
+  &__input
+    border: 0
+    border-radius: 8px
+    width: 100%
+    max-width: 220px
+    margin: 10px auto
+    padding: 1em
     color: var(--card-block-input-placeholder)
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset
+    background-color: inherit
 
-.btnSearch
-  border: 0
-  cursor: pointer
-  margin-left: 5px
-  font-size: 20px
-  color: var(--card-block-input-placeholder)
-  background-color: inherit
+    &:focus-visible
+      outline: none
 
+    &::placeholder
+      color: var(--card-block-input-placeholder)
+
+  &__button
+    border: 0
+    cursor: pointer
+    margin-left: 5px
+    font-size: 20px
+    color: var(--card-block-input-placeholder)
+    background-color: inherit

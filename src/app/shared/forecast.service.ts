@@ -12,5 +12,4 @@ export class ForecastService {
   getWeatherData(city: string) {
     return this.http.get<Forecast>(environment.apiUrl + city + `&aqi=no`);
   }
-
 }
