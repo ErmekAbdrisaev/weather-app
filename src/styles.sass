@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*:before,
+*:after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  color: black
+  background: #dadbe0
+  font-size: 18px
+  font-family: 'Roboto', sans-serif
+  margin: 0
+  min-height: 100vH
+  --card-background: #50597b
+  --theme-togle-btn: linear-gradient(195deg, hsl(0deg 0% 0%) 0%, hsl(228deg 11% 6%) 50%, hsl(228deg 11% 9%) 100%)
+  --main-nav-line: 2px solid gray
+  --btnSearch: #4D4D4D
+  --card-block-input-placeholder: #4D4D4D
+  --car-block-input: rgba( 0,0,0,.6)
+
+body.dark-theme
+  background: #4D4D4D
+  --background-image: linear-gradient(to right top, #2d5b9f, #325ba5, #395aab, #4159b0, #4a58b5)
+  --card-background: #334760
+  --theme-togle-btn: linear-gradient(195deg, hsl(0deg 0% 100%) 1%, hsl(220deg 5% 95%) 50%, hsl(220deg 5% 89%) 99%)
+  --main-nav-line: 2px solid white
+  --logo-color: #fff
+  --card-block-input: rgba( 0,0,0,.6)
+  --card-block-input-placeholder: white
+  --btnSearch: radial-gradient(circle, #3b3c3e, #494a4d, #57585d, #66676d, #76767d)
+
+.container
+  max-width: 1230px
+  margin: 0 auto
+  padding: 0 15px
+
+.error
+  background-color: #f44336
+  padding: 20px
+  color: white
+  margin-bottom: 15px
+  text-align: center
+  border-radius: 2px
+

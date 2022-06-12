@@ -13,4 +13,4 @@ export const forecastReducer = createReducer(
   on(fetchForecastRequest, state => ({...state, forecastLoading: true, forecastError: null})),
   on(fetchForecastSuccess, (state, {forecast}) => ({...state, forecastLoading: false, forecast})),
   on(fetchForecastFailure, (state, {error}) => ({...state, forecastLoading: false, forecastError: error})),
-)
+);

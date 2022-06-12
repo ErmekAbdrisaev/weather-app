@@ -7,12 +7,13 @@ import { fetchForecastRequest } from '../store/forecast.actions';
 @Component({
   selector: 'app-forecast-search',
   templateUrl: './forecast-search.component.html',
-  styleUrls: ['./forecast-search.component.css']
+  styleUrls: ['./forecast-search.component.sass']
 })
 export class ForecastSearchComponent {
   @ViewChild('f') searchForm!: NgForm;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>) {
+  }
 
   onSubmit() {
     const city = this.searchForm.value['searchCountry'];

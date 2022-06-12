@@ -29,4 +29,5 @@ import { LoaderComponent } from './ui/loader/loader.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

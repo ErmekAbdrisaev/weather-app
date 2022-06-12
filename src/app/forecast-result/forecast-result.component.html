@@ -3,54 +3,62 @@
 </div>
 
 <app-loader [isLoading]="forecastLoading | async">
-  <div class="info-block" *ngIf="forecast | async as $forecast">
-    <div class="display-block" >
-      <h1>{{$forecast.location.name}}</h1>
-      <h4>{{$forecast.location.country}}</h4>
-      <div>
-        <p class="forecastTemp"> {{temperatureChange === 'cel' ? $forecast.current.temp_c + '℃' : $forecast.current.temp_f + '℉'}} / </p>
-        <p class="feelsLike">Feels like:
-          <span>{{temperatureChange === 'cel' ? $forecast.current.feelslike_c + '℃': $forecast.current.feelslike_f + '℉' }} </span>
-        </p>
-      </div>
-      <div class="conditionBlock">
-        <p>{{$forecast.current.condition.text}}
-          <img [src]="$forecast.current.condition.icon" alt="condition image">
-        </p>
-      </div>
-      <div class="windBlock">
-        <span> Wind direction: {{ $forecast.current.wind_dir }} </span>
-        <p>
-          <span>
-            <img src="./assets/Windy.svg" alt="wind picture">
-            {{temperatureChange === 'cel' ? $forecast.current.wind_kph + 'kph' : $forecast.current.wind_mph + 'mph' }}
-            |</span>
-          <span><img src="./assets/humidity.svg" alt=""> {{ $forecast.current.humidity }}</span>
+  <div class="forecast" *ngIf="forecast | async as $forecast">
+    <div class="forecast__header" [ngClass]="{'forecast-day': $forecast.current.is_day}">
+      <h3 class="forecast__header__country">{{$forecast.location.name}}</h3>
+      <p class="forecast__header__temperature">
+        {{temperatureChange === 'cel' ? $forecast.current.temp_c + '℃' : $forecast.current.temp_f + '℉'}}
+      </p>
+    </div>
 
-        </p>
+    <div class="forecast__more">
+      <div class="forecast__more__item">
+        <img src="../../assets/images/tempIncrease.png" alt="feels image" class="forecast__more__item__img">
+        {{temperatureChange === 'cel' ? $forecast.current.feelslike_c + '℃' : $forecast.current.feelslike_f + '℉' }}
       </div>
-      <div>
-        <p>UV index: {{ $forecast.current.uv}}</p>
-        <p>Visibility: {{ $forecast.current.vis_km + 'kmh'}} km</p>
+
+      <div class="forecast__more__item forecast__more__item--condition">
+        <img [src]="$forecast.current.condition.icon" alt="condition image" class="forecast__more__item__img">
+        {{$forecast.current.condition.text}}
       </div>
-      <div class="tempOption">
-        <label for="tempChange" class="tempLabel">
-          <select name="tempChange" id="tempChange" [(ngModel)]="temperatureChange">
-            <option value="far">F</option>
-            <option value="cel">C</option>
-          </select>
-        </label>
+
+      <div class="forecast__more__item forecast__more__item--wind-direction">
+        <img src="../../assets/images/wind-direction.png" alt="feels image" class="forecast__more__item__img">
+        {{ $forecast.current.wind_dir }}
+      </div>
+
+      <div class="forecast__more__item forecast__more__item--wind-force">
+        <img src="../../assets/images/wind.png" alt="feels image" class="forecast__more__item__img">
+        {{temperatureChange === 'cel' ? $forecast.current.wind_kph + 'kph' : $forecast.current.wind_mph + 'mph' }}
+      </div>
+
+      <div class="forecast__more__item forecast__more__item--humidity">
+        <img src="../../assets/images/humidity.png" alt="feels image" class="forecast__more__item__img">
+        {{ $forecast.current.humidity }}
+      </div>
+
+      <div class="forecast__more__item forecast__more__item--uv">
+        <img src="../../assets/images/uv.png" alt="feels image" class="forecast__more__item__img">
+        {{ $forecast.current.uv}}
+      </div>
+
+      <div class="forecast__more__item forecast__more__item--visibility">
+        <img src="../../assets/images/visibility.png" alt="feels image" class="forecast__more__item__img">
+        {{ temperatureChange === 'cel' ? $forecast.current.vis_km + 'kmh' : $forecast.current.vis_miles + 'mph' }}
+      </div>
+
+      <div class="forecast__more__item forecast__more__item--pressure">
+        <img src="../../assets/images/pressure.png" alt="weather pressure" class="forecast__more__item__img">
+        {{ temperatureChange === 'cel' ? $forecast.current.pressure_in + 'Hg' : $forecast.current.pressure_mb + 'Mb' }}
+      </div>
+      <div class="forecast__more__item forecast__more__item--tempOption">
+        <select name="tempChange" id="tempChange" [(ngModel)]="temperatureChange"
+                class="forecast__more__item__tempOption">
+          <option value="far">F</option>
+          <option value="cel">C</option>
+        </select>
       </div>
     </div>
   </div>
-<!--  <div #alterText  class="alternativeText">-->
-<!--    <h1>Worldwide forecast</h1>-->
-<!--    <img src="./assets/worldweather.png" alt="world map">-->
-<!--    <h5>Learn about the weather in the world</h5>-->
-<!--  </div>-->
 </app-loader>
-
-
-
-
 

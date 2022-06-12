@@ -2,7 +2,6 @@ export interface Forecast {
   location: {
     name: string,
     country: string,
-    localtime: string,
   },
   current: {
     temp_c: number,
@@ -17,8 +16,6 @@ export interface Forecast {
     wind_kph: number,
     wind_degree: number,
     wind_dir: string,
-    pressure_mb: number,
-    pressure_in: number,
     humidity: number,
     cloud: number,
     feelslike_c: number,
@@ -26,11 +23,7 @@ export interface Forecast {
     vis_km: number,
     vis_miles: number,
     uv: number,
+    pressure_in: number,
+    pressure_mb: number,
   }
-}
-
-export interface ForecastError {
-  error: {
-    message: string,
-  };
 }
